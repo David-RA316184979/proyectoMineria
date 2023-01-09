@@ -1,0 +1,7 @@
+Comandos para levantar en servidor:
+
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
+.env\Scripts\activate
+python .\app\app.py
+
+
