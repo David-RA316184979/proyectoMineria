@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bree+Serif&display=swap" rel="stylesheet">
+
+    <style type="text/css">
+        body {
+          background-image: url();
+          background-repeat: no-repeat;
+          background-color: white;
+        }
+        
+        .carousel-inner{
+          height: 500px;
+          margin-top: 130px;
+        }
+    
+        .nav-link{
+          font-size: 20px;
+          font-family: 'Bebas Neue';
+        }
+        footer {
+          background-color: #f2aa1f;  
+        padding: 0.6em 0;
+        margin-top: auto;
+        margin-top: 120px;
+        color: whitesmoke;
+        font-size: medium;
+        text-align: center;
+      }
+      .boton {
+        border: 1px solid #e3973f; /*anchura, estilo y color borde*/
+        padding: 10px; /*espacio alrededor texto*/
+        background-color: #e3973f; /*color botón*/
+        color: #ffffff; /*color texto*/
+        text-decoration: none; /*decoración texto*/
+        text-transform: uppercase; /*capitalización texto*/
+        font-family: 'Helvetica', sans-serif; /*tipografía texto*/
+        border-radius: 50px; /*bordes redondos*/
+      }
+      </style>
+</head>
+
+<body>
+    <center>
+    <p style="font-size: 80px">
+        <b><u>Menú.</u></b>   
+    </p>
+
+    <!--<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="static/min1.jpg" width="400" height="600" class="d-block w-100">
+        </div>
+        <div class="carousel-item">
+          <img src="static/min2.jpg" width="400" height="600" class="d-block w-100">
+        </div>
+        <div class="carousel-item">
+          <img src="static/min3.png" width="400" height="600" class="d-block w-100">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div> -->
+
+    <p align="center"> Escoge el algoritmo que quieres probar.</p>
+    <form action = "{{ url_for('predict') }}" method="POST">
+        <input type = "submit" value = "Análisis Exploratorio de Datos" class="boton">
+    </form>
+    <form action = "{{ url_for('pca') }}" method="POST">
+        <input type = "submit" value = "Análisis de Componentes Principales" class="boton">
+    </form>
+    <form action = "{{ url_for('ADecision') }}" method="POST">
+        <input type = "submit" value = "Arboles" class="boton">
+    </form>
+
+    <p style="font-size: 20px">
+        <a href="/">Regresar</a>
+    </p>
+    </center>
+</body>
+
+<footer>
+  Minería de datos 
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Reyes Avila David 
+</footer>
+</html>

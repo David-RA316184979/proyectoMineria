@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PCA</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bree+Serif&display=swap" rel="stylesheet">
+
+    <style type="text/css">
+        body {
+          background-image: url();
+          background-repeat: no-repeat;
+          background-color: white;
+        }
+        
+        .carousel-inner{
+          height: 500px;
+          margin-top: 130px;
+        }
+    
+        .nav-link{
+          font-size: 20px;
+          font-family: 'Bebas Neue';
+        }
+        footer {
+          background-color: #f2aa1f;  
+        padding: 0.6em 0;
+        margin-top: auto;
+        margin-top: 120px;
+        color: whitesmoke;
+        font-size: medium;
+        text-align: center;
+      }
+      .boton {
+        border: 1px solid #e3973f; /*anchura, estilo y color borde*/
+        padding: 10px; /*espacio alrededor texto*/
+        background-color: #e3973f; /*color botón*/
+        color: #ffffff; /*color texto*/
+        text-decoration: none; /*decoración texto*/
+        text-transform: uppercase; /*capitalización texto*/
+        font-family: 'Helvetica', sans-serif; /*tipografía texto*/
+        border-radius: 50px; /*bordes redondos*/
+      }
+      </style>
+</head>
+
+<body>
+
+    <center>
+    <p style="font-size: 80px">
+        <b><u>Analisis de Componentes Principales.</u></b>   
+    </p>
+    </center>
+    <h2><p style="text-align:center">Variables posiblemente correlacionadas.</p></h2>
+    <center>
+        <p>Consulta todos los datos ingresados.</p>
+        <form action = "{{ url_for('VerLaData') }}" method="POST">
+            <input type = "submit" value = "Ver los datos" class ="boton">
+        </form>
+        <p>Matriz de correlaciones.</p>
+        <form action = "{{ url_for('MatrizCorr2') }}" method="POST">
+            <input type = "submit" value = "Matriz de correlaciones" class ="boton">
+        </form>
+    </center>
+    
+    <div style="text-align: center;">
+        <image src="{{ url_for('static', filename='CorrPCA.jpg') }}" border="10"></image>
+    </div>
+    <center>
+       <p>Estandarizacion: Proceso de ajustar los datos para que éstos se asemejen.</p>
+        <form action = "{{ url_for('Estandarizar') }}" method="POST">
+            <input type = "submit" value = "Matriz de Datos Estandarizados" class ="boton">
+        </form>
+        <p>Normalizacion:  Proceso de ajustar los datos en el que los datos tendrá un calor entre cero y uno.</p>
+        <form action = "{{ url_for('Normalizar') }}" method="POST">
+            <input type = "submit" value = "Matriz de Datos Normalizados" class ="boton">
+        </form>
+    </center>
+    <h2> 
+        <p style="text-align:center">Eigen-vectores y Eigen-valores.</p>
+    </h2>
+    <center>
+       <p>Se calcula la matriz de covarianzas o correlaciones, y se calculan los componentes y la varianza.</p>
+        <form action = "{{ url_for('Cargas') }}" method="POST">
+            <input type = "submit" value = "Proporción de relevancia de los datos" class ="boton">
+        </form>
+        <p>Decidir el número de componentes principales.</p>
+        <div style="text-align: center;">
+            <image src="{{ url_for('static', filename='VarianzaAcumPCA1.jpg') }}" border="10"></image>
+        </div>
+    <h2>
+        <p style="text-align:center">
+            Análisis correlacional de datos: Evaluación visual
+        </p>
+    </h2>
+    <div style="text-align: center;">
+        <image src="{{ url_for('static', filename='Visual.jpg') }}" border="10"></image>
+    </div>
+    </center>
+    
+    <br>
+    <center>
+    <p style="font-size: 30px">
+        <a href="/">Regresar</a>
+    </p>
+    </center>
+</body>
+
+<footer>
+    Minería de datos 
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Reyes Avila David 
+</footer>
+</html>
